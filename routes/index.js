@@ -4,9 +4,11 @@ var items = require('../data');
 
 var foodItem = require('../foodItem');
 
+
 for(var item in items) {
   items[item] = foodItem(items[item]);
 }
+
 
 exports.foodItem = function(req, res){
   var name = req.param('name');
@@ -15,4 +17,27 @@ exports.foodItem = function(req, res){
   } else {
     res.json(items[name].getInformation());
   }
+}
+
+
+// can ignore or keep for reference:
+var nut1 = foodItem({
+    "name": "almond",
+    "type": "nut",
+    "origin": "bush",
+    "colour": "brown"
+})
+var nut2 = foodItem({
+    "name": "pecan",
+    "type": "nut",
+    "origin": "bush",
+    "colour": "brown"
+})
+
+exports.nut1 = function(req, res){
+  res.json(nut1.getInformation());
+}
+
+exports.nut2 = function(req, res){
+  res.json(nut2.getInformation());
 }

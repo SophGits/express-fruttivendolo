@@ -22,7 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', routes);
-app.get('/foodItem/:name', routes.foodItem);
+app.get('/item/:name', routes.foodItem);
+app.get('/nut1', routes.nut1);
+app.get('/nut2', routes.nut2);
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
