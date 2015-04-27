@@ -15,15 +15,24 @@ var FoodItem = function () {
     }
   };
 
-  this.triggerBuy = function () {
-    this.data.buyTime = Date.now();
+  this.formatDate = function(date){
+    // var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    // var day = date.getDate();
+    // var monthIndex = date.getMonth();
+    // var year = date.getFullYear();
+    // return day, monthNames[monthIndex], year;
+    return date;
   };
 
-  this.triggerEat = function () {
+  this.triggerBuy = function() {
+    this.data.buyTime =  this.formatDate(Date.now());
+  };
+
+  this.triggerEat = function() {
     this.data.eatTime = Date.now();
   };
 
-  this.getInformation = function () {
+  this.getInformation = function() {
     return this.data;
   };
 };
