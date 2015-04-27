@@ -19,6 +19,15 @@ exports.foodItem = function(req, res){
   }
 }
 
+exports.bought = function(req, res){
+  var name = req.param('name');
+  if(typeof items[name] === 'undefined'){
+    res.status(404).json({status: 'error'});
+  } else {
+    items[name].triggerBuy();
+    res.json({status: 'done'});
+  }
+}
 
 // can ignore or keep for reference:
 var nut1 = foodItem({

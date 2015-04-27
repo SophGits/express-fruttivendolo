@@ -20,11 +20,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(function(req, res, next){
+  res.set('X-Powered-By', 'Italian Fruit Shops');
+  next();
+})
 
 // app.use('/', routes);
 app.get('/item/:name', routes.foodItem);
 app.get('/nut1', routes.nut1);
 app.get('/nut2', routes.nut2);
+
+app.put('/item/:name/bought', routes.bought);
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
