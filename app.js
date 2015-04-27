@@ -30,6 +30,7 @@ app.get('/item/:name', routes.foodItem);
 app.get('/nut1', routes.nut1);
 app.get('/nut2', routes.nut2);
 app.get('/list', routes.list);
+app.get('/list/json', routes.jsonList);
 
 app.put('/item/:name/bought', routes.bought);
 

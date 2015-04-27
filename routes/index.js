@@ -33,11 +33,18 @@ exports.list = function(req, res){
   res.render('list', {title: "All foods", items: items});
 }
 
+exports.jsonList = function(req, res){
+  var jsonItems = [];
+  for(var item in items){
+    jsonItems.push(items[item].getInformation());
+  };
+  res.json(jsonItems);
+}
 
 
 
-
-// can ignore or keep for reference:
+/////////////////////////////////////////////////////////////
+// Can ignore or keep for reference:
 var nut1 = foodItem({
     "name": "almond",
     "type": "nut",
