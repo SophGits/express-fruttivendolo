@@ -29,6 +29,7 @@ app.use(function(req, res, next){
 app.get('/item/:name', routes.foodItem);
 app.get('/nut1', routes.nut1);
 app.get('/nut2', routes.nut2);
+app.get('/list', routes.list);
 
 app.put('/item/:name/bought', routes.bought);
 

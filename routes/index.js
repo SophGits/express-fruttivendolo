@@ -29,6 +29,14 @@ exports.bought = function(req, res){
   }
 }
 
+exports.list = function(req, res){
+  res.render('list', {title: "All foods", items: items});
+}
+
+
+
+
+
 // can ignore or keep for reference:
 var nut1 = foodItem({
     "name": "almond",

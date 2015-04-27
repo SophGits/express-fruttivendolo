@@ -1,5 +1,6 @@
 var FoodItem = function () {
   this.data = {
+    name: null,
     type: null,
     origin: null,
     colour: null,

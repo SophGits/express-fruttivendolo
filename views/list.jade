@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  ul
+    each item, index in items
+      - item = item.getInformation()
+      li= item.name + ': ' + item.colour + ", " + item.origin + ", " + item.type
